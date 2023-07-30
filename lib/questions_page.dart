@@ -18,43 +18,23 @@ class _questions_pageState extends State<questions_page> {
     setState(() {});
   }
 
-  List<int> number = [0, 1, 2, 3];
-
   @override
   Widget build(BuildContext context) {
-    return SizedBox.expand(
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
-            child: Text(
-              data[i].question,
-              style: GoogleFonts.robotoMono(
-                textStyle: const TextStyle(
-                  color: Color.fromARGB(130, 255, 255, 255),
-                  fontSize: 30,
-                ),
+          Text(
+            data[i].question,
+            style: GoogleFonts.robotoMono(
+              textStyle: const TextStyle(
+                color: Color.fromARGB(130, 255, 255, 255),
+                fontSize: 30,
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          answerButton(data[i].answer[0], updateI),
-          const SizedBox(
-            height: 20,
-          ),
-          answerButton(data[i].answer[1], updateI),
-          const SizedBox(
-            height: 20,
-          ),
-          answerButton(data[i].answer[2], updateI),
-          const SizedBox(
-            height: 20,
-          ),
-          answerButton(data[i].answer[3], updateI),
+          answerButton(options, () {})
         ],
       ),
     );
