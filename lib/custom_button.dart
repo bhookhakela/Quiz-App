@@ -7,25 +7,32 @@ class answerButton extends StatelessWidget {
   final String options;
   @override
   Widget build(context) {
-    return TextButton(
-      onPressed: buttonpress,
-      style: TextButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+    return Column(
+      children: [
+        const SizedBox(
+          height: 20,
         ),
-        backgroundColor: const Color.fromARGB(54, 255, 255, 255),
-      ),
-      child: Center(
-        child: Text(
-          options,
-          style: GoogleFonts.nunito(
-            textStyle: const TextStyle(
-              color: Color.fromARGB(181, 255, 255, 255),
-              fontSize: 20,
+        TextButton(
+          onPressed: buttonpress,
+          style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            backgroundColor: const Color.fromARGB(54, 255, 255, 255),
+          ),
+          child: Center(
+            child: Text(
+              options,
+              style: GoogleFonts.nunito(
+                textStyle: const TextStyle(
+                  color: Color.fromARGB(181, 255, 255, 255),
+                  fontSize: 20,
+                ),
+              ),
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 }

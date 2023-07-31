@@ -34,22 +34,9 @@ class _questions_pageState extends State<questions_page> {
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          answerButton(data[i].answer[0], updateI),
-          const SizedBox(
-            height: 20,
-          ),
-          answerButton(data[i].answer[1], updateI),
-          const SizedBox(
-            height: 20,
-          ),
-          answerButton(data[i].answer[2], updateI),
-          const SizedBox(
-            height: 20,
-          ),
-          answerButton(data[i].answer[3], updateI),
+          ...(data[i].shuffle_options()).map((items) {
+            return answerButton(items, updateI);
+          }),
         ],
       ),
     );
