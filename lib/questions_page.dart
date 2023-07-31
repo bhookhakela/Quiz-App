@@ -34,8 +34,8 @@ class _questions_pageState extends State<questions_page> {
               ),
             ),
           ),
-          ...(data[i].shuffle_options()).map((items) {
-            return answerButton(items, updateI);
+          ...(data[i].shuffle_options()).map((things) {
+            return answerButton(things, updateI);
           }),
         ],
       ),
