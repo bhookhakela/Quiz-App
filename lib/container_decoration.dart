@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/Home.dart';
-import 'package:quiz_app/questions_page.dart';
+import 'package:quiz_app/final_page_decider.dart';
 
 class container_decoration extends StatefulWidget {
   const container_decoration({super.key});
@@ -22,7 +22,7 @@ class _container_decorationState extends State<container_decoration> {
   Widget build(BuildContext context) {
     Widget currentScreen = home(changeScreen);
     if (active_state == 'question-screen') {
-      currentScreen = const questions_page();
+      currentScreen = const FinalPageDecide();
     }
     return Container(
       decoration: const BoxDecoration(
