@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 class QuestionNew extends StatelessWidget {
   QuestionNew(this.i, this.updateI, {super.key});
-  int i;
-  void Function() updateI;
+  final int i;
+  final void Function() updateI;
 
   @override
   Widget build(BuildContext context) {
