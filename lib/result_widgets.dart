@@ -9,15 +9,31 @@ class ResultWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          "You got $score answers correct out of 6 questions",
+        RichText(
           textAlign: TextAlign.center,
-          style: GoogleFonts.kanit(
-            textStyle: const TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Color.fromARGB(177, 122, 57, 233),
-              fontSize: 20,
+          text: TextSpan(
+            style: GoogleFonts.kanit(
+              textStyle: const TextStyle(
+                color: Color.fromARGB(255, 162, 102, 235),
+                fontSize: 17,
+              ),
             ),
+            children: <TextSpan>[
+              const TextSpan(
+                text: "You got",
+              ),
+              TextSpan(
+                text: " $score ",
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 26,
+                  color: Color.fromARGB(255, 193, 140, 236),
+                ),
+              ),
+              const TextSpan(
+                text: "answers correct out of 6 questions",
+              ),
+            ],
           ),
         ),
       ],
