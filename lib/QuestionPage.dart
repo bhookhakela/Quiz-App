@@ -17,6 +17,7 @@ class QuestionNew extends StatelessWidget {
         children: [
           Text(
             data[i].question,
+            textAlign: TextAlign.center,
             style: GoogleFonts.robotoMono(
               textStyle: const TextStyle(
                 color: Color.fromARGB(130, 255, 255, 255),

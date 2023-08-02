@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quiz_app/data/globals.dart';
 
 class answerButton extends StatelessWidget {
   answerButton(this.options, this.buttonpress, {super.key});
-  void Function() buttonpress;
+  final void Function() buttonpress;
   final String options;
+  void feed_ans(String x) {
+    selected_ans.add(x);
+  }
+
   @override
   Widget build(context) {
     return Column(
@@ -13,7 +18,10 @@ class answerButton extends StatelessWidget {
           height: 20,
         ),
         TextButton(
-          onPressed: buttonpress,
+          onPressed: () {
+            feed_ans(options);
+            buttonpress();
+          },
           style: TextButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
@@ -23,6 +31,7 @@ class answerButton extends StatelessWidget {
           child: Center(
             child: Text(
               options,
+              textAlign: TextAlign.center,
               style: GoogleFonts.nunito(
                 textStyle: const TextStyle(
                   color: Color.fromARGB(181, 255, 255, 255),
