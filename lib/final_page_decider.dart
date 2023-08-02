@@ -12,7 +12,6 @@ class FinalPageDecide extends StatefulWidget {
 }
 
 class _FinalPageDecideState extends State<FinalPageDecide> {
-  int score = 0;
   int i = 0;
   int QuestionOrResult = 0;
 
@@ -32,7 +31,7 @@ class _FinalPageDecideState extends State<FinalPageDecide> {
   Widget build(BuildContext context) {
     Widget currentScreen = QuestionNew(i, updateI);
     if (QuestionOrResult == 1) {
-      currentScreen = Result(score);
+      currentScreen = Result();
     }
     return currentScreen;
   }
