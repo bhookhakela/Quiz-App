@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quiz_app/data/globals.dart';
-
+import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/result_widgets.dart';
+// import 'package:quiz_app/result_widgets.dart';
 
 class Result extends StatelessWidget {
   const Result({super.key});
+  List<Map<String, Object>> getsummary() {
+    List<Map<String, Object>> temp = [];
+    for (int i = 0; i < data.length; i++) {
+      temp.add({
+        "number": i + 1,
+        "question": data[i].question,
+        "choice": selected_ans[i],
+        "correct": data[i].answer[0],
+      });
+    }
+    return temp;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +26,7 @@ class Result extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       child: Padding(
-        padding: EdgeInsets.fromLTRB(40, 50, 40, 50),
+        padding: const EdgeInsets.fromLTRB(40, 50, 40, 50),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -44,7 +57,7 @@ class Result extends StatelessWidget {
                   ],
                 ),
               ),
-              ResultWidget(),
+              ...getsummary().map((dummy) => ResultWidget(dummy))
             ],
           ),
         ),
