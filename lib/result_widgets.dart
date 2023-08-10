@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class ResultWidget extends StatelessWidget {
   const ResultWidget(this.summary, {super.key});
-  final Map<String, Object> summary;
+  final Map<String, String> summary;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -18,7 +18,7 @@ class ResultWidget extends StatelessWidget {
           ),
           Column(
             children: [
-              // Text(summary["number"] as String),    casuing some error
+              Text(summary["number"] as String),
               Text(summary["question"] as String),
               Text(summary["choice"] as String),
               Text(summary["correct"] as String),

@@ -7,14 +7,14 @@ import 'package:quiz_app/result_widgets.dart';
 
 class Result extends StatelessWidget {
   const Result({super.key});
-  List<Map<String, Object>> getsummary() {
-    List<Map<String, Object>> temp = [];
-    for (int i = 0; i < data.length; i++) {
+  List<Map<String, String>> getsummary() {
+    List<Map<String, String>> temp = [];
+    for (var i = 1; i < data.length; i++) {
       temp.add({
-        "number": i + 1,
-        "question": data[i].question,
-        "choice": selected_ans[i],
-        "correct": data[i].answer[0],
+        "number": '$i',
+        "question": data[i - 1].question,
+        "choice": selected_ans[i - 1],
+        "correct": data[i - 1].answer[0],
       });
     }
     return temp;
