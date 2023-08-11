@@ -26,40 +26,44 @@ class Result extends StatelessWidget {
       width: double.infinity,
       height: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(40, 50, 40, 50),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              RichText(
-                textAlign: TextAlign.center,
-                text: TextSpan(
-                  style: GoogleFonts.kanit(
-                    textStyle: const TextStyle(
-                      color: Color.fromARGB(255, 162, 102, 235),
-                      fontSize: 17,
+        padding: const EdgeInsets.fromLTRB(50, 30, 30, 50),
+        child: Column(
+          children: [
+            RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                style: GoogleFonts.kanit(
+                  textStyle: const TextStyle(
+                    color: Color.fromARGB(255, 162, 102, 235),
+                    fontSize: 17,
+                  ),
+                ),
+                children: <TextSpan>[
+                  const TextSpan(
+                    text: "You got",
+                  ),
+                  TextSpan(
+                    text: " $score ",
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 26,
+                      color: Color.fromARGB(255, 193, 140, 236),
                     ),
                   ),
-                  children: <TextSpan>[
-                    const TextSpan(
-                      text: "You got",
-                    ),
-                    TextSpan(
-                      text: " $score ",
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 26,
-                        color: Color.fromARGB(255, 193, 140, 236),
-                      ),
-                    ),
-                    const TextSpan(
-                      text: "answers correct out of 6 questions",
-                    ),
-                  ],
-                ),
+                  const TextSpan(
+                    text: "answers correct out of 6 questions",
+                  ),
+                ],
               ),
-              ...getsummary().map((dummy) => ResultWidget(dummy))
-            ],
-          ),
+            ),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  ...getsummary().map((dummy) => ResultWidget(dummy)),
+                ],
+              ),
+            )
+          ],
         ),
       ),
     );

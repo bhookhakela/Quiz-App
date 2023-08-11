@@ -8,23 +8,46 @@ class ResultWidget extends StatelessWidget {
   final Map<String, String> summary;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: [
-          FloatingActionButton.small(
-            onPressed: () {},
-            backgroundColor: Colors.amber,
-            child: const Icon(Icons.abc),
-          ),
-          Column(
-            children: [
-              Text(summary["number"] as String),
-              Text(summary["question"] as String),
-              Text(summary["choice"] as String),
-              Text(summary["correct"] as String),
-            ],
-          )
-        ],
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(20, 30, 30, 20),
+      child: Center(
+        child: Row(
+          children: [
+            FloatingActionButton.small(
+              onPressed: () {},
+              backgroundColor: Colors.amber,
+              child: Text(
+                summary["number"] as String,
+              ),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  // Text(
+                  //   summary["number"] as String,
+                  //   textAlign: TextAlign.center,
+                  // ),
+
+                  Text(
+                    summary["question"] as String,
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    summary["choice"] as String,
+                    textAlign: TextAlign.center,
+                  ),
+                  Text(
+                    summary["correct"] as String,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
